@@ -10,7 +10,7 @@ const books = {
   },
 
   getById: (req, res) => {
-    const books = booklist.filter(a => a.AuthorId == req.params.id);
+    const books = booklist.filter(a => a.Id == req.params.id);
     if (books && books.length) {
       return res.status(200).send(books);
     } else {
@@ -18,7 +18,7 @@ const books = {
     }
   },
   getByAuthorId: (req, res) => {
-    const books = booklist.filter(a => a.Id == req.params.id);
+    const books = booklist.filter(a => a.AuthorId == req.params.id);
     if (books && books.length) {
       return res.status(200).send(books);
     } else {
